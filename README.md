@@ -26,7 +26,6 @@ The configuration will be updated to have more things to select from! 😉
 
 4. Copy the bot's token and paste it into the configuration's `token = ""` part.
 
-5. In the configuration file select the prefix that is not used with other bots in the `prefix = ""` part.
 
 That's it! You just need to run the bot.py file and you are now running Riftbot! 🎉🎉🎉
 
