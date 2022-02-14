@@ -42,7 +42,7 @@ Im bored#5959 - Founder 😊
 
 # Twitter
 https://twitter.com/rift_bot
-#Support server
+# Support server
 https://discord.gg/8bEsjdqEJz
 
 [DownloadPython]: https://www.python.org/downloads/
