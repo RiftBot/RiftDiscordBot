@@ -20,5 +20,31 @@ class Information(commands.Cog):
         await ctx.send(embed=embed)
 
 
+    @commands.command()
+    async def userinfo(self, ctx, member : discord.Member=None):
+        if member is None:
+            created_at = ctx.author.created_at.strftime("%b %d, %Y")
+            joined_at = ctx.author.joined_at.strftime("%b %d, %Y")
+            embed = discord.Embed(title="User Information", description=f"User information about {ctx.author.mention}", color=discord.Color.green())
+            embed.add_field(name="Username", value=f"{ctx.author.mention}", inline=False)
+            embed.add_field(name="Tag", value=f"{ctx.author.discriminator}", inline=False)
+            embed.add_field(name="Joined In", value=f"{joined_at}", inline=False)
+            embed.add_field(name="User Created", value=f"{created_at}", inline=False)
+            embed.set_image(url=ctx.author.avatar_url)
+            embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
+            await ctx.send(embed=embed)
+        else:
+            created_at = member.created_at.strftime("%b %d, %Y")
+            joined_at = member.joined_at.strftime("%b %d, %Y")
+            embed = discord.Embed(title="User Information", description=f"User information about {member.mention}", color=discord.Color.green())
+            embed.add_field(name="Username", value=f"{member.mention}", inline=False)
+            embed.add_field(name="Tag", value=f"{member.discriminator}", inline=False)
+            embed.add_field(name="Joined In", value=f"{joined_at}", inline=False)
+            embed.add_field(name="User Created", value=f"{created_at}", inline=False)
+            embed.set_image(url=member.avatar_url)
+            embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
+            await ctx.send(embed=embed)
+
+
 def setup(bot):
     bot.add_cog(Information(bot))
