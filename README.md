@@ -18,7 +18,7 @@ The configuration will be updated to have more things to select from! 😉
 
 ## Install Guide
 
-1.Download python [here][]!
+1.Download python [here][DownloadPython]!
 
 2. Create a new application in the [Discord Developer Portal][DiscordDeveloperPortal]!
 
