@@ -7,6 +7,7 @@ bot = commands.Bot(command_prefix="!")
 @bot.event
 async def on_ready():
     print("Bot is logged in!")
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="https://github.com/riftbot"))
 
 
 for filename in os.listdir('./cogs'):
