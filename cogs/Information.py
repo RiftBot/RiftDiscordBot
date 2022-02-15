@@ -45,6 +45,16 @@ class Information(commands.Cog):
             embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
             await ctx.send(embed=embed)
 
+    @commands.command()
+    async def serverinfo(self, ctx):
+        created_at = ctx.guild.created_at.strftime("%b %d, %Y")
+        embed = discord.Embed(title="Server Information", description=f"Server information about {ctx.guild.name}", color=discord.Color.green())
+        embed.add_field(name="Server Name", value=f"{ctx.guild.name}", inline=False)
+        embed.add_field(name="Created", value=f"{created_at}", inline=False)
+        embed.set_image(url=ctx.guild.icon_url)
+        embed.set_footer(text=f"Requested by {ctx.author.name}", icon_url=ctx.author.avatar_url)
+        await ctx.send(embed=embed)
+
 
 def setup(bot):
     bot.add_cog(Information(bot))
